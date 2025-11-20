@@ -20,6 +20,12 @@ if apikey and bundle and appid and project:
         .replace("{EMAIL}", EMAIL)
 
     st.subheader("Generated codemagic.yaml")
+    st.download_button(
+        label="Скачать",
+        data=yaml,
+        file_name="codemagic.yaml",
+        mime="text/yaml"
+    )
     st.code(yaml, language="yaml")
 else:
     st.info("Fill all fields to see the result 👇")
